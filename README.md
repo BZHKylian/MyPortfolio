@@ -76,4 +76,4 @@ Les contributions sont les bienvenues ! Si vous avez des suggestions ou souhaite
 
 ## License
 
-Ce projet est sous licence MIT.
+Ce projet est sous licence GPL.
