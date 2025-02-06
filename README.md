@@ -1,7 +1,3 @@
-Voici une version mise à jour du README, en prenant en compte que ton portfolio est aussi un premier projet en React et SCSS :
-
----
-
 # Portfolio de Kylian Houedec
 
 ## Description
