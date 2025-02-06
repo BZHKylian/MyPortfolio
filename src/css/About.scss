@@ -11,17 +11,16 @@
 }
 
 .about-me {
-    width: 100vw; // Assure que la section couvre toute la largeur de l'écran
-    height: 100vh; // Utilise toute la hauteur de l'écran
-    background-image: url('/asset/img/kylianPhare.jpg'); // Assure-toi que l'image est bien trouvée
+    margin:0;
+    width: 100%;
+    height: 52em;
+    background-image: url("../asset/img/kylianPhare.jpg");
     background-position: center;
-    background-size: cover; // L'image s'ajuste à la taille de l'écran
-    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-
 
 .about-overlay {
     margin: 0;
