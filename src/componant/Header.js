@@ -1,6 +1,6 @@
 // src/componant/Header.js
 import React from 'react';
-import './css/Header.css';
+import '../css/Header.css';
 import logo from "../asset/img/kh.png";
 
 function Header() {

@@ -1,44 +1,19 @@
-import { useState } from "react";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
-function App(){
-  //State {état, donnée}
-  const [fruits, setFruits] = useState([
-    {id: 1, nom: "Pomme"},
-    {id: 2, nom: "Fraise"},
-    {id: 3, nom: "Framboise"},
-    {id: 4, nom: "Cerise"},
-    {id: 5, nom: "Poire"},
-    {id: 6, nom: "Abricot"},
-    {id: 7, nom: "Pêche"},
-    {id: 8, nom: "Orange"},
-  ]);
-
-  //comportements
-  const deleteElement = (id) => {
-    alert(id);
-    //1. copie tableau
-    const fruitCopy = fruits.slice();
-
-    //2. Modifie tableau
-    const fruitCopyUpdated = fruitCopy.filter(fruit => fruit.id !== id);
-
-    //3 Actualise le tableau
-    setFruits(fruitCopyUpdated);
-  };
-
-  //affichage
-  return  (
-      <div>
-        <h1>Listes de fruits</h1>
-        <ul>
-          {fruits.map((fruit) => {
-            return (
-                <li key={fruit.id}>
-                  {fruit.nom} <button onClick={() => deleteElement(fruit.id)}>Supprimer</button>
-                </li>
-          )})}
-        </ul>
-      </div>
-  )}
+function App() {
+  return (
+    <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+    </Router>
+  );
+}
 
 export default App;
