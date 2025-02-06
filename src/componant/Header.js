@@ -1,13 +1,14 @@
 // src/componant/Header.js
 import React from 'react';
 import './css/Header.css';
+import logo from "../asset/img/kh.png";
 
 function Header() {
     return (
         <header>
             <nav>
                 <a href="#" className="logo">
-                    <img src="./asset/img/kh.png" alt="Kylian Houedec Logo" />
+                    <img src={logo} alt="Kylian Houedec Logo" />
                 </a>
                 <ul>
                     <li><a href="#about">À propos</a></li>
