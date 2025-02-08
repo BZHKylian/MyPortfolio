@@ -1,0 +1,144 @@
+// 🎨 Variables
+@import '../colors';
+@import '../font';
+
+$font-primary: belanosima;
+
+
+// 📌 Mixins
+@mixin background($img-url) {
+    background-image: url($img-url);
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 📌 Styles
+#about {
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    @include flex-center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+// 📸 Image de profil
+#maPhoto {
+    outline: 5px solid $background-color;
+    border-radius: 50%;
+    width:17em;
+    height: 17em;
+}
+
+// 📌 Section "About Me"
+.about-me {
+    width: 100vw;
+    height: 52em;
+    @include background('../../asset/img/kylianPhare.jpg');
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+// 🎭 Overlay
+.about-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10em;
+
+    > div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+// 📝 Texte et infos
+sup {
+    font-size: 0.7em;
+}
+
+strong {
+    color: $primary-color;
+}
+
+.info {
+    margin-bottom: 3em;
+
+    h1 {
+        font-weight: 600;
+        font-family: $font-primary;
+        font-size: 4em;
+        margin: 0;
+    }
+}
+
+.recherche {
+    h2 {
+        font-weight: 500;
+        font-family: $font-primary;
+        font-size: 2em;
+        margin: 0;
+    }
+
+    ul {
+        text-align: justify;
+        width: 70%;
+
+        li {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+// 📌 Âge et études
+#age, #etude {
+    margin: 0;
+    font-size: 1.7em;
+    font-weight: 600;
+}
+
+#etude {
+    font-size: 1.1em;
+}
+
+// 🔻 Bouton Scroll avec animation
+.scroll-down {
+    font-size: 1.2rem;
+    color: $text-color;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid $text-color;
+    border-radius: 5px;
+    transition: 0.3s;
+    animation: pulse 1.5s infinite;
+
+    &:hover {
+        background-color: $text-color;
+        color: $background-color;
+    }
+}
+
+// 🔄 Animation pour un effet "respiration"
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

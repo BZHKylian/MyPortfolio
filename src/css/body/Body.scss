@@ -1,11 +1,10 @@
 // Body.scss
-@import 'colors';
-@import 'font';
+@import '../colors';
+@import '../font';
 
 body {
     font-family: lato;
     margin: 0;
-    padding: 0;
     background-color: $background-color;
     color: $text-color;
     display: flex;

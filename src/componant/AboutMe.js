@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import maPhoto from "../asset/img/kylian.jpg";
 import kylianPhare from '../asset/img/kylianPhare.jpg';
 
-import '../css/About.css';
+import '../css/aboutMe/About.css';
 
 function AboutMe() {
 
@@ -30,20 +30,16 @@ function AboutMe() {
             <div className="about-overlay">
                 <img id="maPhoto" src={maPhoto} alt="Kylian Houedec" />
                 <div>
-                    <div>
-                        <h1>Kylian HOUEDEC</h1>
+                    <div className="info">
+                        <h1>Salut, Kylian Houedec !</h1>
                         <p id="age">{age} ans</p>
-                        <p id="etude">Étudiant en 2<sup>ème</sup> année BUT Informatique à l'IUT de Lannion.</p>
+                        <p id="etude">🎓 Étudiant en 2<sup>ème</sup> année BUT Informatique à l'IUT de Lannion, passionné par le développement web.</p>
                     </div>
-                    <div>
-                        <h2>À la recherche d'opportunités !</h2>
-                        <p>Je suis actuellement à la recherche :</p>
-                        <ul>
-                            <li>D'un <strong>stage</strong> début avril 2025 d'une durée de 8 à 12 semaines, dans le
-                                développement informatique, que ce soit web ou logiciel.</li>
-                            <li>D'une <strong>alternance</strong> pour l'année 2025-2026, afin de continuer à développer
-                                mes compétences tout en contribuant activement à vos projets.</li>
-                        </ul>
+                    <div className='recherche'>
+                        <h2>Actuellement à la recherche d'opportunités !</h2>
+                        <p>🚀 Explore mes projets et découvre mes compétences en programmation.</p>
+
+                        <p>📩 Envie de discuter ou collaborer ? Contacte-moi !</p>
                     </div>
                 </div>
             </div>

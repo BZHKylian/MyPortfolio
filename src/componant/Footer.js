@@ -1,6 +1,6 @@
 // src/componant/Header.js
 import React from 'react';
-import '../css/Footer.css';
+import '../css/footer/Footer.css';
 
 function Footer() {
     return (

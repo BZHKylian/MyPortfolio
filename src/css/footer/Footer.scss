@@ -1,11 +1,11 @@
 /* Footer.scss */
 
-@import 'colors';
-@import 'font';
+@import '../colors';
+@import '../font';
 
 /* Footer */
 footer {
-    background-color: background-color;
+    background-color: $background-color;
     color: #aaa;
     text-align: center;
     width: 100%;
