@@ -1,0 +1,97 @@
+/* Page wrapper */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  width: 30vw;
+  margin: 8em auto 3em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.contact-page h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form container */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Input and textarea */
+input,
+textarea {
+  font-size: 1rem;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fafafa;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#message {
+  resize: vertical;
+}
+
+/* Label */
+label {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* Button */
+button {
+  background-color: #003f75;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #002c53;
+}
+
+/* Status message */
+#status {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #4caf50;
+  /* Success message color */
+  /* Error message */
+}
+#status.error {
+  color: #e74c3c;
+  /* Error message color */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 20px;
+  }
+  .contact-page h2 {
+    font-size: 1.5rem;
+  }
+  input,
+  textarea {
+    padding: 10px;
+  }
+  button {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=Contact.css.map */

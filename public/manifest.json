@@ -1,0 +1,8 @@
+{
+  "short_name": "Mon Portfolio",
+  "name": "Mon portfolio pour repertorié mes différents projets informatique.",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

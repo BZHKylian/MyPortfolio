@@ -1,0 +1,65 @@
+/********************************/
+/*************Header*************/
+/********************************/
+
+@import '../colors';
+@import '../font';
+
+header {
+    width: 100%;
+    background-color: $background-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    font-family: lato;
+  
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 0;
+  
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $text-color;
+        text-decoration: none;
+  
+        img {
+          height: 2.5em;
+          margin-left: 1em;
+        }
+      }
+  
+      ul {
+        display: flex;
+        align-items: flex-end;
+        list-style: none;
+        gap: 2em;
+        margin-right: 2em;
+  
+        li {
+          a {
+            color: $text-color;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+  
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+  
+      .menu-toggle {
+        display: none;
+      }
+    }
+  }

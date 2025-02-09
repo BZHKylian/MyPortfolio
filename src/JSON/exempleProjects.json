@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "titre": "Mon Portfolio",
+      "description": "Site web personnel avec React et TailwindCSS.",
+      "technologies": ["React", "TailwindCSS", "PHP", "PostgreSQL"],
+      "outils": ["Figma", "GitHub Actions"],
+      "image": "/images/portfolio.jpg",
+      "lien_demo": "https://kylian-houedec.fr",
+      "lien_github": "https://github.com/bzhkylian/portfolio",
+      "date_debut": "2024-09",
+      "date_fin": null,
+      "status": "En cours",
+      "categorie": "Web"
+    },
+    {
+      "id": 2,
+      "titre": "Forum2",
+      "description": "Système de forum avec PostgreSQL et PHP.",
+      "technologies": ["PHP", "PostgreSQL", "HTML", "CSS"],
+      "outils": ["Docker", "Postman"],
+      "image": "/images/forum2.jpg",
+      "lien_demo": "https://forum2.kylian-houedec.fr",
+      "lien_github": "https://github.com/bzhkylian/forum2",
+      "date_debut": "2024-10",
+      "date_fin": "2024-11",
+      "status": "Terminé",
+      "categorie": "Web"
+    }
+  ]
+  
