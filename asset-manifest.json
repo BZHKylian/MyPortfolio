@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.58ebc23e.css",
-    "main.js": "/static/js/main.9975623b.js",
+    "main.css": "/static/css/main.588c9459.css",
+    "main.js": "/static/js/main.89b5c580.js",
     "static/media/kylianPhare.jpg": "/static/media/kylianPhare.ef0140588bf6a4470df1.jpg",
     "static/media/kylian.jpg": "/static/media/kylian.9444f2d19f3c92b67267.jpg",
     "static/media/kh.png": "/static/media/kh.6aa42d8e821a86cdbf04.png",
     "index.html": "/index.html",
-    "main.58ebc23e.css.map": "/static/css/main.58ebc23e.css.map",
-    "main.9975623b.js.map": "/static/js/main.9975623b.js.map"
+    "main.588c9459.css.map": "/static/css/main.588c9459.css.map",
+    "main.89b5c580.js.map": "/static/js/main.89b5c580.js.map"
   },
   "entrypoints": [
-    "static/css/main.58ebc23e.css",
-    "static/js/main.9975623b.js"
+    "static/css/main.588c9459.css",
+    "static/js/main.89b5c580.js"
   ]
 }
