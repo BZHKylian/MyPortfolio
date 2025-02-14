@@ -10,7 +10,8 @@ import AboutMe from '../components/AboutMe';
 import TechnologiesSwiper from '../components/TechnologiesSwiper';
 
 //Fichier json techno
-import technologie from "../JSON/mesTechnologies.json";
+import mesTechnologies from '../data/mesTechnologies';
+
 
 
 function Home() {
@@ -19,7 +20,7 @@ function Home() {
       <Header />
       <div id="about">
         <AboutMe />
-        <TechnologiesSwiper technologies={technologie}/>
+        <TechnologiesSwiper technologies={mesTechnologies}/>
       </div>
       <Footer />
     </>

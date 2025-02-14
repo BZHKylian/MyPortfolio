@@ -1,0 +1,71 @@
+.technologies-swiper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  
+
+  .splide {
+    width: 40%; /* Ajuste la taille du carrousel */
+    position: relative;
+    
+    .splide__track {
+      padding: 0 20px;
+    }
+
+    .splide__list {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .splide__slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 1;
+      margin: 2em;
+    }
+
+    .card {
+      text-align: center;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #555;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  /* Responsivité */
+  @media (max-width: 768px) {
+    .splide {
+      width: 100%;
+      .splide__track {
+        padding: 0 10px;
+      }
+
+      .splide__list {
+        gap: 0.5rem;
+      }
+
+      .card {
+        padding: 0.5rem;
+      }
+    }
+  }
+}
