@@ -2,7 +2,6 @@ import React from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { useInView } from 'react-intersection-observer';
 
-import '../css/test.css'; // Assure-toi de charger ton CSS
 
 function AboutPage() {
   // Animation pour le titre qui se dévoile avec le scroll

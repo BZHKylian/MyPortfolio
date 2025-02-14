@@ -2,7 +2,6 @@ import React from 'react';
 import maPhoto from "../asset/img/kylian.jpg";
 import download from "../asset/img/telecharger.png"; 
 
-import '../css/aboutMe/QuiSuisJe.css';
 
 function QuiSuisJe() {
     return (

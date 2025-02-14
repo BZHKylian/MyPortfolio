@@ -1,0 +1,763 @@
+// 🎨 Variables
+@import 'colors';
+@import 'font';
+
+$font-primary: "Zen Dots";
+$loading-circle-size: 120px;
+$logo-size: 80px;
+$circle-color: #007bff; // Couleur du cercle de rotation
+
+/***********************/
+/*********BODY**********/
+/***********************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: lato;
+    margin: 0;
+    background-color: $background-color;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#about {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.section-end {
+    position: relative;
+    width: 100vw;
+    height: 8rem;
+    transform: rotate(-2deg) scale(1.2, 2);
+    margin: -4rem 0;
+}
+
+/***********************/
+/********HEADER*********/
+/***********************/
+header {
+    width: 100%;
+    background-color: $background-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    font-family: lato;
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 0;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: $text-color;
+            text-decoration: none;
+
+            img {
+                height: 2.5em;
+                margin-left: 1em;
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: flex-end;
+            list-style: none;
+            gap: 2em;
+            margin-right: 2em;
+
+            li {
+                a {
+                    color: $text-color;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: $btn-background;
+                    }
+                }
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+    }
+}
+
+/***********************/
+/********FOOTER*********/
+/***********************/
+footer {
+    background-color: $background-color;
+    color: #aaa;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    padding: 1em 0;
+}
+
+/****************************/
+/********Qui Suis JE*********/
+/****************************/
+
+.quiSuisJe {
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse; // Inverse l'ordre des éléments (photo à droite)
+    align-items: center; // Centre verticalement les éléments
+    justify-content: space-evenly; // Aligne les éléments au début
+    padding: 5em;
+    background-color: $text-color;
+    color: $background-color;
+    font-family: 'Arial', sans-serif;
+
+    +.section-end {
+        margin-top: 2em;
+        background-color: $background-color;
+    }
+
+    // Photo Container
+    .photo-container {
+        width: 15em;
+        height: 15em;
+        margin-left: 20px; // Espacement à gauche pour la photo (inversé avec row-reverse)
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border: solid 4px $background-color;
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    // Texte Container
+    .texte-container {
+        text-align: left; // Aligne le texte à gauche
+        max-width: 800px;
+        margin-right: 20px; // Espacement à droite pour écarter le texte du bord
+
+        h2 {
+            font-size: 2rem;
+            color: $btn-background;
+            margin-bottom: 10px;
+        }
+
+        >p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: $background-color;
+            margin: 0;
+            text-align: justify;
+        }
+    }
+
+    // Responsivité
+    @media (max-width: 768px) {
+        .photo-container {
+            width: 120px;
+            height: 120px;
+        }
+
+        .texte-container {
+            max-width: 90%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .photo-container {
+            width: 100px;
+            height: 100px;
+        }
+
+        .texte-container {
+            max-width: 95%;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
+/************************/
+/********CONTACT*********/
+/************************/
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    width: 30vw;
+    margin: 8em auto 3em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.contact-page h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form container */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Input and textarea */
+input,
+textarea {
+    font-size: 1rem;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fafafa;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#message {
+    resize: vertical;
+}
+
+/* Label */
+label {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+/* Button */
+button {
+    background-color: #003f75;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #002c53;
+    }
+}
+
+/* Status message */
+#status {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #4caf50;
+
+    /* Success message color */
+    /* Error message */
+    &.error {
+        color: #e74c3c;
+        /* Error message color */
+    }
+}
+
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .contact-page {
+        padding: 20px;
+    }
+
+    .contact-page h2 {
+        font-size: 1.5rem;
+    }
+
+    input,
+    textarea {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
+
+
+
+// 📌 Mixins
+@mixin background($img-url) {
+    background-image: url($img-url);
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 📌 Styles
+#about {
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    @include flex-center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+// 📸 Image de profil
+#maPhoto {
+    outline: 5px solid $background-color;
+    border-radius: 50%;
+    width: 17em;
+    height: 17em;
+}
+
+// 📌 Section "About Me"
+.about-me {
+    width: 100vw;
+    height: 45em;
+    @include background('../asset/img/kylianPhare.jpg');
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+// 🎭 Overlay
+.about-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 9em;
+
+    >div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+// 📝 Texte et infos
+sup {
+    font-size: 0.7em;
+}
+
+strong {
+    color: $primary-color;
+}
+
+.info {
+    margin-bottom: 3em;
+
+    h1 {
+        font-weight: 600;
+        font-family: $font-primary;
+        font-size: 3.5em;
+        margin: 0;
+    }
+
+    >#bonjour {
+        font-weight: 500;
+        font-family: lato;
+        font-size: 2em;
+        color: transparent;
+        background: linear-gradient(45deg, $pinkForHello, $blueForHello, $pink2ForHello, $bleu2ForHello);
+        background-size: 400% 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: gradientAnimation 10s ease-in-out infinite;
+        margin: 0;
+        display: inline-block;
+    }
+
+    // 📌 Âge et études
+    #age,
+    #etude {
+        margin: 0;
+        font-size: 1.7em;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+    }
+
+    #etude {
+        font-size: 1.1em;
+        margin-bottom: 5em;
+    }
+}
+
+.recherche {
+    h2 {
+        font-weight: 500;
+        font-family: belanosima;
+        font-size: 2em;
+        margin: 0;
+    }
+
+    ul {
+        text-align: justify;
+        width: 70%;
+
+        li {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+.voirPlus {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-top: 1em;
+
+    >a {
+        width: 12em;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        text-decoration: none;
+        color: $text-color;
+        text-align: center;
+        background: linear-gradient(45deg, #920088, #003f75, #8f00b3);
+        background-size: 400% 400%;
+        animation: gradientAnimation 10s ease-in-out infinite;
+        border-radius: 25px;
+        padding: 1em 2em;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        p {
+            color: $text-color;
+        }
+
+        img {
+            width: 20px;
+        }
+    }
+}
+
+// 🔻 Bouton Scroll avec animation
+.scroll-down {
+    font-size: 1.2rem;
+    color: $text-color;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid $text-color;
+    border-radius: 5px;
+    transition: 0.3s;
+    animation: pulse 1.5s infinite;
+
+    &:hover {
+        background-color: $text-color;
+        color: $background-color;
+    }
+}
+
+// 🔄 Animation pour un effet "respiration"
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Définition de la couleur de fond du texte avec un dégradé animé */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 100% center; // Commence à gauche
+    }
+
+    50% {
+        background-position: 0% center; // Commence à gauche
+    }
+
+    100% {
+        background-position: 100% center; // Va vers la droite
+    }
+}
+
+// 🎨 Variables pour le loading
+$loading-circle-size: 120px;
+$logo-size: 80px;
+$circle-color: #007bff; // Couleur du cercle de rotation
+
+// 📌 Conteneur de chargement
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+// 📸 Conteneur du cercle rotatif
+.loading-circle {
+    position: relative;
+    width: $loading-circle-size;
+    height: $loading-circle-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 💻 Logo au centre
+.loading-logo {
+    width: $logo-size;
+    height: auto;
+    z-index: 2;
+}
+
+// 🔄 Cercle en rotation autour du logo
+.loading-circle::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid transparent;
+    border-top-color: $circle-color; // Couleur du cercle
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+// 🔁 Animation de rotation
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/***********************/
+/********SWIPER*********/
+/***********************/
+.technologies-swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+
+    .splide {
+        width: 40%;
+        /* Ajuste la taille du carrousel */
+        position: relative;
+
+        .splide__track {
+            padding: 0 20px;
+        }
+
+        .splide__list {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .splide__slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 1;
+            margin: 2em;
+        }
+
+        .card {
+            text-align: center;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            img {
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 600;
+                color: #555;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    /* Responsivité */
+    @media (max-width: 768px) {
+        .splide {
+            width: 100%;
+
+            .splide__track {
+                padding: 0 10px;
+            }
+
+            .splide__list {
+                gap: 0.5rem;
+            }
+
+            .card {
+                padding: 0.5rem;
+            }
+        }
+    }
+}
+
+/************************************/
+/********SECTION TECHNOLOGIE*********/
+/************************************/
+.technologies {
+    padding: 60px 20px;
+    background-color: $background-color;
+    text-align: center;
+    z-index: 1;
+    color: $text-color;
+    
+    // Titre de la section
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-family: 'Roboto', sans-serif;
+    }
+  
+    // Description sous le titre
+    .tech-description {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  // Styles pour les éléments Swiper
+  .technologies-swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+    
+    // Chaque carte de technologie
+    .tech-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 120px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+  
+      // Icône de la technologie
+      i {
+        font-size: 3rem;
+        color: #007acc; // Couleur bleue pour l'icône
+        margin-bottom: 15px;
+      }
+  
+      // Nom de la technologie
+      p {
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  // Responsivité pour les écrans plus petits
+  @media (max-width: 768px) {
+    .technologies {
+      padding: 40px 10px;
+    }
+  
+    .technologies-swiper {
+      gap: 30px;
+    }
+  
+    .tech-card {
+      width: 100px;
+      padding: 15px;
+    }
+  
+    i {
+      font-size: 2.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  

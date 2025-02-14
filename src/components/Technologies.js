@@ -1,6 +1,5 @@
 import React from 'react';
-import TechnologiesSwiper from './TechnologiesSwiper'; // Ton composant Swiper
-import '../css/techno/technologies.css'; // Assurez-vous que le CSS est bien lié
+import TechnologiesSwiper from './TechnologiesSwiper';
 import mesTechnologies from '../data/mesTechnologies'
 
 function Technologies() {

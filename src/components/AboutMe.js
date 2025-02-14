@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import maPhoto from "../asset/img/kylian.jpg";
 
-import '../css/aboutMe/About.css';
-
 function AboutMe() {
 
     const birthDate = "2005-08-23";
