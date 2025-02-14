@@ -7,12 +7,8 @@ import '../css/body/Body.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AboutMe from '../components/AboutMe';
-import TechnologiesSwiper from '../components/TechnologiesSwiper';
-
-//Fichier json techno
-import mesTechnologies from '../data/mesTechnologies';
-
-
+import QuiSuisJe from '../components/QuiSuisje';
+import Technologies from '../components/Technologies';
 
 function Home() {
   return (
@@ -20,7 +16,9 @@ function Home() {
       <Header />
       <div id="about">
         <AboutMe />
-        <TechnologiesSwiper technologies={mesTechnologies}/>
+        <QuiSuisJe />
+        <Technologies />
+        
       </div>
       <Footer />
     </>

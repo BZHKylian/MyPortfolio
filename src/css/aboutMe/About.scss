@@ -133,12 +133,16 @@ strong {
 
 .voirPlus{
     display: flex;
+
     align-items: center ;
     gap: 2em;
 
     margin-top: 1em;
     > a {
         width: 12em;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
         text-decoration: none;
         color: $text-color;
         text-align: center;
@@ -153,7 +157,16 @@ strong {
         &:hover{
             transform: scale(1.1);
         }
+
+        p{
+            color: $text-color;
+        }
+    
+        img{
+            width: 20px;
+        }
     }
+
 }
 
 // 🔻 Bouton Scroll avec animation

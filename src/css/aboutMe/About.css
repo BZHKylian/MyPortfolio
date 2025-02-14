@@ -112,6 +112,9 @@ strong {
 }
 .voirPlus > a {
   width: 12em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   text-decoration: none;
   color: #fff;
   text-align: center;
@@ -124,6 +127,12 @@ strong {
 }
 .voirPlus > a:hover {
   transform: scale(1.1);
+}
+.voirPlus > a p {
+  color: #fff;
+}
+.voirPlus > a img {
+  width: 20px;
 }
 
 .scroll-down {

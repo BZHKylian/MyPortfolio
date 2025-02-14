@@ -1,0 +1,72 @@
+.quiSuisJe {
+  width: 100vw;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5em;
+  background-color: #fff;
+  color: #121212;
+  font-family: "Arial", sans-serif;
+}
+.quiSuisJe + .section-end {
+  margin-top: 2em;
+  background-color: #121212;
+}
+.quiSuisJe .photo-container {
+  width: 15em;
+  height: 15em;
+  margin-left: 20px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: solid 4px #121212;
+}
+.quiSuisJe .photo-container .photo {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.quiSuisJe .texte-container {
+  text-align: left;
+  max-width: 800px;
+  margin-right: 20px;
+}
+.quiSuisJe .texte-container h2 {
+  font-size: 2rem;
+  color: #0088ff;
+  margin-bottom: 10px;
+}
+.quiSuisJe .texte-container > p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #121212;
+  margin: 0;
+  text-align: justify;
+}
+@media (max-width: 768px) {
+  .quiSuisJe .photo-container {
+    width: 120px;
+    height: 120px;
+  }
+  .quiSuisJe .texte-container {
+    max-width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  .quiSuisJe .photo-container {
+    width: 100px;
+    height: 100px;
+  }
+  .quiSuisJe .texte-container {
+    max-width: 95%;
+  }
+  .quiSuisJe h2 {
+    font-size: 1.6rem;
+  }
+  .quiSuisJe p {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=QuiSuisJe.css.map */

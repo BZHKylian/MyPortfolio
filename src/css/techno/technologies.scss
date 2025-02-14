@@ -1,0 +1,93 @@
+// Styles pour la section technologies
+@import '../colors';
+
+.technologies {
+    padding: 60px 20px;
+    background-color: $background-color;
+    text-align: center;
+    z-index: 1;
+    color: $text-color;
+    
+    // Titre de la section
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-family: 'Roboto', sans-serif;
+    }
+  
+    // Description sous le titre
+    .tech-description {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  // Styles pour les éléments Swiper
+  .technologies-swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+    
+    // Chaque carte de technologie
+    .tech-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 120px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+  
+      // Icône de la technologie
+      i {
+        font-size: 3rem;
+        color: #007acc; // Couleur bleue pour l'icône
+        margin-bottom: 15px;
+      }
+  
+      // Nom de la technologie
+      p {
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  // Responsivité pour les écrans plus petits
+  @media (max-width: 768px) {
+    .technologies {
+      padding: 40px 10px;
+    }
+  
+    .technologies-swiper {
+      gap: 30px;
+    }
+  
+    .tech-card {
+      width: 100px;
+      padding: 15px;
+    }
+  
+    i {
+      font-size: 2.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  

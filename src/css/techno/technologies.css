@@ -1,0 +1,72 @@
+.technologies {
+  padding: 60px 20px;
+  background-color: #121212;
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+}
+.technologies h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.technologies .tech-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.technologies-swiper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.technologies-swiper .tech-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.technologies-swiper .tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.technologies-swiper .tech-card i {
+  font-size: 3rem;
+  color: #007acc;
+  margin-bottom: 15px;
+}
+.technologies-swiper .tech-card p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .technologies {
+    padding: 40px 10px;
+  }
+  .technologies-swiper {
+    gap: 30px;
+  }
+  .tech-card {
+    width: 100px;
+    padding: 15px;
+  }
+  i {
+    font-size: 2.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=technologies.css.map */
