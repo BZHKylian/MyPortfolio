@@ -1,27 +1,51 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
 const TechnologiesSwiper = ({ technologies = [] }) => {
+  const splideRef = useRef(null);
+
   if (!technologies || !Array.isArray(technologies) || technologies.length === 0) {
     return <p>Chargement des technologies...</p>;
   }
 
-  // Aplatir les technologies pour les afficher toutes dans le même Splide
-  const allTechnologies = technologies.flatMap(categoryObj => 
+  const allTechnologies = technologies.flatMap(categoryObj =>
     Object.values(categoryObj).flat()
   );
+
+  useEffect(() => {
+    const splide = splideRef.current?.splide;
+  
+    if (splide) {
+      splide.on('move', () => {
+        const currentIndex = splide.index;
+        const slidesPerPage = splide.options.perPage;  // Récupère le nombre de diapositives visibles par page
+        const totalSlides = splide.length;
+  
+        // Si on est sur la dernière diapositive visible de la page
+        if (currentIndex >= totalSlides - slidesPerPage) {
+          // Attendre un instant avant de revenir à la première
+          setTimeout(() => {
+            splide.go(0); // Aller à la première diapositive
+          }, 5000); // Délai avant de revenir au début
+        }
+      });
+    }
+  }, []);
+  
 
   return (
     <div className="technologies-swiper">
       <Splide
+        ref={splideRef}
         options={{
-          
-          perPage:1, 
+          type: 'slide', // Pas de loop ici
+          perPage: 7, // Nombre de slides visibles par page
           arrows: true,
-          pagination: true,
           autoplay: true,
-          interval:2500,
+          interval: 5000, // Temps de pause entre chaque changement
+          pauseOnHover: true,
+          resetProgress: true, // Réinitialise le progress des dots
         }}
       >
         {allTechnologies.map((item) => (
@@ -32,12 +56,13 @@ const TechnologiesSwiper = ({ technologies = [] }) => {
             </div>
           </SplideSlide>
         ))}
-        
-          <SplideSlide> {/* Création d'un élément vide car sinon bash ne s'affiche pas */}
-            <div className="card">
-              <p></p>
-            </div>
-          </SplideSlide>
+
+        {/* Slide vide supplémentaire si besoin */}
+        <SplideSlide>
+          <div className="card">
+            <p></p>
+          </div>
+        </SplideSlide>
       </Splide>
     </div>
   );

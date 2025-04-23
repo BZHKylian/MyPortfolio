@@ -15,6 +15,11 @@ function Home() {
         <AboutMe />
         <QuiSuisJe />
         <Technologies />
+        <div id="divProjets">
+          <a href='/#portfolio'>
+              <p>Voir mes projets</p>
+          </a>
+        </div>
         
       </div>
       <Footer />

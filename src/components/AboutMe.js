@@ -40,8 +40,8 @@ function AboutMe() {
                         <p>📩 Envie de discuter ou collaborer ? Contactez-moi !</p>
                     </div>
                     <div className='voirPlus'>
-                        <a>Mes Projets</a>
-                        <a href='#/contact'>Me Contacter</a>
+                        <a href='/#portfolio'>Mes Projets</a>
+                        <a href='/#contact'>Me Contacter</a>
                     </div>
                 </div>
             </div>

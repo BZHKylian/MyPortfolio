@@ -1,43 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import LoadingPage from './components/LoadingPage';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
+import LoadingPage from './components/LoadingPage'; // Page de chargement
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Portfolio from './pages/Portfolio';
 
 import "./css/styles.css"
 
+const router = createHashRouter([
+  {
+    path: '/',
+    element: <Home />
+  },
+  {
+    path: '/contact',
+    element: <Contact />
+  },
+  {
+    path: '/portfolio',
+    element: <Portfolio />
+  }
+]);
+
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); // État pour gérer le chargement
 
+  // Utiliser useEffect pour gérer le délai avant de charger le contenu
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    const timeout = setTimeout(() => {
+      setIsLoading(false); // Changer l'état après 2.5 secondes
+    }, 2500);
 
-    return () => clearTimeout(timer);
+    // Nettoyage du timeout pour éviter des erreurs si le composant est démonté
+    return () => clearTimeout(timeout);
   }, []);
 
-  return (
-    <Router>
-      {loading ? (
-        <LoadingPage />
-      ) : (
-        <>
-          <nav style={styles.navbar}>
-            <Link to="/" style={styles.link}>Home</Link>
-            <Link to="/about" style={styles.link}>About</Link>
-            <Link to="/contact" style={styles.link}>Contact</Link>
-          </nav>
+  // Si la page est en train de charger, afficher la page de chargement
+  if (isLoading) {
+    return <LoadingPage />;
+  }
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </>
-      )}
-    </Router>
+  return (
+    <RouterProvider router={router} />
   );
 }
 
