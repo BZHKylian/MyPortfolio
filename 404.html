@@ -1,13 +1,109 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <script>
-        window.location.replace(window.location.pathname);
-    </script>
-    <title>Redirection...</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 - Page Non Trouvée</title>
+  <style>
+    /* Fond dynamique */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #141414;
+      font-family: 'Fira Code', monospace;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      animation: fadeIn 2s ease-out;
+    }
+
+    /* Animation d'apparition du texte */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 10rem;
+      color: #fff;
+      margin: 0;
+      animation: bounce 1s ease infinite alternate;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px); }
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #8b949e;
+      margin: 1rem 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #c9d1d9;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #238636;
+      color: #fff;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 1.5rem;
+    }
+
+    a:hover {
+      background-color: #2ea043;
+    }
+
+    code {
+      background: #161b22;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      color: #ff7b72;
+    }
+
+    /* Mobile friendly */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <p>Redirection en cours...</p>
+  <div class="container">
+    <h1>404</h1>
+    <h2>Page non trouvée</h2>
+    <p>Oops! Il semble que cette page n'existe pas. Peut-être un problème de typo ?</p>
+    <p><code>404 Error: File Not Found</code></p>
+    <a href="/">Retour à l'accueil</a>
+    <div class="cursor"></div>
+  </div>
 </body>
 </html>
