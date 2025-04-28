@@ -450,7 +450,8 @@ strong {
     }
 }
 
-.voirPlus, #divProjets{
+.voirPlus,
+#divProjets {
     display: flex;
     align-items: center;
     gap: 2em;
@@ -677,87 +678,274 @@ $circle-color: #007bff; // Couleur du cercle de rotation
     text-align: center;
     z-index: 1;
     color: $text-color;
-    
+
     // Titre de la section
     h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      font-family: 'Roboto', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: 'Roboto', sans-serif;
     }
-  
+
     // Description sous le titre
     .tech-description {
-      font-size: 1.2rem;
-      color: #666;
-      margin-bottom: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
-  }
-  
-  // Styles pour les éléments Swiper
-  .technologies-swiper {
+}
+
+// Styles pour les éléments Swiper
+.technologies-swiper {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
     flex-wrap: wrap;
     padding: 20px;
-    
+
     // Chaque carte de technologie
     .tech-card {
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 120px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      
-      &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      }
-  
-      // Icône de la technologie
-      i {
-        font-size: 3rem;
-        color: #007acc; // Couleur bleue pour l'icône
-        margin-bottom: 15px;
-      }
-  
-      // Nom de la technologie
-      p {
-        font-size: 1.1rem;
-        color: #333;
-        font-weight: 500;
-      }
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 120px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        // Icône de la technologie
+        i {
+            font-size: 3rem;
+            color: #007acc; // Couleur bleue pour l'icône
+            margin-bottom: 15px;
+        }
+
+        // Nom de la technologie
+        p {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
     }
-  }
-  
-  // Responsivité pour les écrans plus petits
-  @media (max-width: 768px) {
+}
+
+// Responsivité pour les écrans plus petits
+@media (max-width: 768px) {
     .technologies {
-      padding: 40px 10px;
+        padding: 40px 10px;
     }
-  
+
     .technologies-swiper {
-      gap: 30px;
+        gap: 30px;
     }
-  
+
     .tech-card {
-      width: 100px;
-      padding: 15px;
+        width: 100px;
+        padding: 15px;
     }
-  
+
     i {
-      font-size: 2.5rem;
+        font-size: 2.5rem;
     }
-  
+
     p {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  }
-  
+}
+
+/** Card Pour les projets **/
+#divPortfolio {
+    margin-block: 10em;
+    justify-content: center;
+    align-items: center;
+
+
+    &>h3 {
+        font-family: belanosima;
+        font-size: 4rem;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    &>p {
+        width: 65%;
+        margin-bottom: 1.5em;
+        margin-inline: auto;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    .portfolio {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        min-height: 100vh;
+
+        .cardProject {
+            width: 45%;
+            height: 28em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff; // Fond blanc
+            border-radius: 15px; // Coins arrondis généraux
+            overflow: hidden; // Cache tout contenu dépassant les bords arrondis
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Légère ombre pour donner du relief
+            position: relative; // Nécessaire pour positionner le statut
+
+            .projectStatus {
+                width: 120px;
+                height: 30px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: white;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 15px 15px 0 15px;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            .termine {
+                background-color: $colorTermine;
+
+                & + .divProject .divProjet {
+                    button {
+                        background-color: $colorTermine;
+                    }
+                }
+            }
+
+            .divProject {
+                display: flex;
+                flex-direction: row; // Affiche les éléments en ligne
+
+
+                .imageCardImage {
+                    flex-shrink: 0; // Empêche l'image de se rétrécir
+                    width: 40%;
+                    padding: 20px;
+                    margin: auto;
+                    overflow: hidden; // S'assure que l'image reste dans le carré
+                    border-radius: 10px; // Coins légèrement arrondis sur l'image
+
+                    img {
+                        width: 100%;
+                        object-fit: cover; // Couvre l'image tout en conservant son ratio
+                    }
+                }
+
+                .cardContent {
+                    width: 60%;
+                    padding: 20px;
+                    margin-top: 2em;
+                    margin-bottom: 0.5em;
+                    color: $background-color;
+
+                    p {
+                        margin: 8px 0;
+                        line-height: 1.5;
+
+                        strong {
+                            color: $background-color;
+                        }
+                    }
+
+                    .titreProjet {
+                        font-family: belanosima;
+                        text-align: center;
+                        margin-bottom: 0.75rem;
+
+                        h3 {
+                            font-size: 2em; // Taille du titre
+                            font-weight: bold;
+                            line-height: 35px;
+                        }
+
+                        p {
+                            font-size: 0.95rem;
+                        }
+
+                    }
+
+                    .cardTechnologies {
+                        line-height: 5px;
+                        margin-top: 1.5rem;
+
+                        h4 {
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                            font-size: 1.2rem;
+                        }
+
+                        ul {
+                            display: flex;
+                            align-items: center;
+                            list-style: none;
+                            padding: 0;
+                            gap: 0.5em;
+
+                            li {
+                                margin: 5px 0; // Espacement entre les technologies
+                                font-size: 1rem;
+
+                                img {
+                                    width: 30px;
+                                }
+                            }
+                        }
+                    }
+
+                    .divProjet {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 2em;
+                        margin-top: 1em;
+                        color: $text-color;
+
+                        >button {
+                            padding: 0.25em 0;
+                            width: 12em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-evenly;
+                            text-decoration: none;
+                            text-align: center;
+                            border-radius: 25px;
+                            transition: transform 0.3s ease-in-out;
+                            color: $text-color;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Effet au survol
+            &:hover {
+                transform: translateY(-5px); // Légère élévation au survol
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Ombre plus marquée
+                transition: transform 0.3s ease, box-shadow 0.3s ease; // Transition fluide
+            }
+        }
+    }
+
+}

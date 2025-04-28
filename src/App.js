@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
 
 import "./css/styles.css"
+import DetailProjet from './pages/Projet';
 
 const router = createHashRouter([
   {
@@ -20,8 +21,13 @@ const router = createHashRouter([
   {
     path: '/portfolio',
     element: <Portfolio />
+  },
+  {
+    path: '/projet',
+    element: <DetailProjet />
   }
 ]);
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true); // État pour gérer le chargement

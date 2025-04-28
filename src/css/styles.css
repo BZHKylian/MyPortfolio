@@ -388,13 +388,15 @@ strong {
   margin-bottom: 1em;
 }
 
-.voirPlus, #divProjets {
+.voirPlus,
+#divProjets {
   display: flex;
   align-items: center;
   gap: 2em;
   margin-top: 1em;
 }
-.voirPlus > a, #divProjets > a {
+.voirPlus > a,
+#divProjets > a {
   width: 12em;
   display: flex;
   align-items: center;
@@ -409,13 +411,16 @@ strong {
   padding: 1em 2em;
   transition: transform 0.3s ease-in-out;
 }
-.voirPlus > a:hover, #divProjets > a:hover {
+.voirPlus > a:hover,
+#divProjets > a:hover {
   transform: scale(1.1);
 }
-.voirPlus > a p, #divProjets > a p {
+.voirPlus > a p,
+#divProjets > a p {
   color: #fff;
 }
-.voirPlus > a img, #divProjets > a img {
+.voirPlus > a img,
+#divProjets > a img {
   width: 20px;
 }
 
@@ -643,4 +648,159 @@ strong {
   p {
     font-size: 1rem;
   }
+}
+/** Card Pour les projets **/
+#divPortfolio {
+  margin-block: 10em;
+  justify-content: center;
+  align-items: center;
+}
+#divPortfolio > h3 {
+  font-family: belanosima;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: bold;
+}
+#divPortfolio > p {
+  width: 65%;
+  margin-bottom: 1.5em;
+  margin-inline: auto;
+  text-align: center;
+  font-size: 1.25rem;
+}
+#divPortfolio .portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  min-height: 100vh;
+}
+#divPortfolio .portfolio .cardProject {
+  width: 45%;
+  height: 28em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+#divPortfolio .portfolio .cardProject .projectStatus {
+  width: 120px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px 15px 0 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+#divPortfolio .portfolio .cardProject .termine {
+  background-color: #00B193;
+}
+#divPortfolio .portfolio .cardProject .termine + .divProject .divProjet button {
+  background-color: #00B193;
+}
+#divPortfolio .portfolio .cardProject .divProject {
+  display: flex;
+  flex-direction: row;
+}
+#divPortfolio .portfolio .cardProject .divProject .imageCardImage {
+  flex-shrink: 0;
+  width: 40%;
+  padding: 20px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#divPortfolio .portfolio .cardProject .divProject .imageCardImage img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent {
+  width: 60%;
+  padding: 20px;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: #121212;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent p strong {
+  color: #121212;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .titreProjet {
+  font-family: belanosima;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .titreProjet h3 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 35px;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .titreProjet p {
+  font-size: 0.95rem;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .cardTechnologies {
+  line-height: 5px;
+  margin-top: 1.5rem;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .cardTechnologies h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .cardTechnologies ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 0.5em;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .cardTechnologies ul li {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .cardTechnologies ul li img {
+  width: 30px;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .divProjet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 1em;
+  color: #fff;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .divProjet > button {
+  padding: 0.25em 0;
+  width: 12em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 25px;
+  transition: transform 0.3s ease-in-out;
+  color: #fff;
+}
+#divPortfolio .portfolio .cardProject .divProject .cardContent .divProjet > button:hover {
+  transform: scale(1.1);
+}
+#divPortfolio .portfolio .cardProject:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }/*# sourceMappingURL=styles.css.map */
