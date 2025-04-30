@@ -5,9 +5,16 @@ import '@splidejs/react-splide/css';
 const TechnologiesSwiper = ({ technologies = [] }) => {
   const splideRef = useRef(null);
 
-  const allTechnologies = technologies.flatMap(categoryObj =>
-    Object.values(categoryObj).flat()
-  );
+  const EXCLUDED_CATEGORIES = ['fichier'];
+  const EXCLUDED_TECH_IDS = [20];
+
+  const allTechnologies = technologies.flatMap(categoryObj => { // exclusion de la categorie fichier et de tkinter car pas besoin de l'avoir dans le slider
+    return Object.entries(categoryObj)
+      .filter(([categoryName]) => !EXCLUDED_CATEGORIES.includes(categoryName))
+      .flatMap(([, techs]) =>
+        techs.filter(tech => !EXCLUDED_TECH_IDS.includes(tech.id))
+      );
+  });
 
   useEffect(() => {
     const splide = splideRef.current?.splide;

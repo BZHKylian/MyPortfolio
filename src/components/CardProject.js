@@ -1,25 +1,9 @@
 import React from 'react';
 import mesTechnologies from '../data/mesTechnologies';
 import { useNavigate } from "react-router-dom";
+import { strNoAccent } from '../utils/strNoAccent';
 
-// Fonction pour enlever les accents des caractères
-function strNoAccent(str) {
-    const accents = {
-        a: /[àáâãäå]/g,
-        e: /[èéêë]/g,
-        i: /[ìíîï]/g,
-        o: /[òóôõö]/g,
-        u: /[ùúûü]/g,
-        c: /[ç]/g,
-        n: /[ñ]/g
-    };
 
-    for (let letter in accents) {
-        str = str.replace(accents[letter], letter);
-    }
-
-    return str;
-}
 
 // CardProject reçoit un projet complet comme prop
 function CardProject({ project }) {

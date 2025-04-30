@@ -17,6 +17,11 @@ const projets = {
     ],
     "outils": null,
     "imageResume": "/asset/img/projets/sudoku.gif",
+    "images": [
+                {"id": 1, "lien": "/asset/img/projets/Sudoku.png","alt": "Capture d'écran du sudoku finale","title": "Capture d'écran du sudoku finale"},
+                {"id": 2, "lien": "/asset/img/projets/Sudoku.png","alt": "Capture d'écran du sudoku finale","title": "Capture d'écran du sudoku finale"}
+              ],
+    
     "lien_demo": null,
     "lien_github": "https://github.com/BZHKylian/Projet_sudoku",
     "date_debut": "2023-09",
@@ -92,7 +97,8 @@ const projets = {
     ],
     "outils": null,
     "imageResume": "/asset/img/projets/pact.png",
-    "lien_demo": null,
+    "image": [],
+    "lien_demo": "https:/the-void.ventsdouest.dev",
     "lien_github": "https://github.com/BZHKylian/Pact",
     "date_debut": "2024-10",
     "date_fin": "2025-03",
@@ -147,6 +153,7 @@ const projets = {
     ],
     "outils": null,
     "imageResume": "/asset/img/projets/cavalier.gif",
+    "image": [],
     "lien_demo": null,
     "lien_github": "https://github.com/BZHKylian/Tour_du_Cavalier",
     "date_debut": "2023-09",
@@ -197,8 +204,9 @@ const projets = {
     ],
     "outils": null,
     "imageResume": "/asset/img/projets/doc_generator.gif",
+    "image": [],
     "lien_demo": null,
-    "lien_github": "https://github.com/BZHKylian/Doc-Generator", 
+    "lien_github": "https://github.com/BZHKylian/Doc-Generator",
     "date_debut": "2024-02",
     "date_fin": "2024-04",
     "status": "Terminé",
@@ -230,8 +238,8 @@ const projets = {
       }
     ]
   }
-  
-  
+
+
 };
 
 export default projets;

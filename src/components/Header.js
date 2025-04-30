@@ -1,8 +1,9 @@
 // src/componant/Header.js
 import React from 'react';
 import logo from "../asset/img/kh.png";
+import { strNoAccent } from '../utils/strNoAccent';
 
-function Header() {
+function Header({ project }) {
     return (
         <header>
             <nav>
@@ -16,6 +17,11 @@ function Header() {
                 </ul>
                 <div className="menu-toggle">☰</div>
             </nav>
+            {project ? (
+                <p className={`${strNoAccent(project.status).toLowerCase()} projectStatus`}>
+                    {project.status}
+                </p>
+            ) : null}
         </header>
     );
 }

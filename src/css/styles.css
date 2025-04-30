@@ -15,7 +15,7 @@
 body {
   font-family: lato;
   margin: 0;
-  background-color: #121212;
+  background-color: #141414;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -47,26 +47,48 @@ body {
   margin: -4rem 0;
 }
 
+.projectStatus {
+  width: 120px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px 15px 0 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.termine {
+  background-color: #00B193;
+}
+.termine + .divProject .divProjet button {
+  background-color: #00B193;
+}
+
 /***********************/
 /********HEADER*********/
 /***********************/
 header {
   width: 100%;
-  background-color: #121212;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  padding: 10px 0;
   font-family: lato;
 }
 header nav {
+  background-color: #141414;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 header nav .logo {
   display: flex;
@@ -99,12 +121,24 @@ header nav ul li a:hover {
 header nav .menu-toggle {
   display: none;
 }
+header .projectStatus {
+  transform: scale(1.1);
+  top: auto;
+  bottom: 0;
+  right: 0;
+  border-radius: 15px 0 0 15px;
+}
+header .termine {
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
 
 /***********************/
 /********FOOTER*********/
 /***********************/
 footer {
-  background-color: #121212;
+  background-color: #141414;
   color: #aaa;
   text-align: center;
   width: 100%;
@@ -123,12 +157,12 @@ footer {
   justify-content: space-evenly;
   padding: 5em;
   background-color: #fff;
-  color: #121212;
+  color: #141414;
   font-family: "Arial", sans-serif;
 }
 .quiSuisJe + .section-end {
   margin-top: 2em;
-  background-color: #121212;
+  background-color: #141414;
 }
 .quiSuisJe .photo-container {
   width: 15em;
@@ -137,7 +171,7 @@ footer {
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: solid 4px #121212;
+  border: solid 4px #141414;
 }
 .quiSuisJe .photo-container .photo {
   width: 100%;
@@ -159,7 +193,7 @@ footer {
 .quiSuisJe .texte-container > p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #121212;
+  color: #141414;
   margin: 0;
   text-align: justify;
 }
@@ -197,28 +231,25 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  background-color: #ffffff;
+  background-color: #fff;
   width: 30vw;
   margin: 8em auto 3em;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Title */
 .contact-page h2 {
   font-size: 2rem;
   color: #333;
   margin-bottom: 20px;
 }
 
-/* Form container */
 form {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-/* Input and textarea */
 input,
 textarea {
   font-size: 1rem;
@@ -235,14 +266,12 @@ textarea {
   resize: vertical;
 }
 
-/* Label */
 label {
   font-size: 1rem;
   margin-bottom: 6px;
   color: #444;
 }
 
-/* Button */
 button {
   background-color: #003f75;
   color: #fff;
@@ -257,21 +286,16 @@ button:hover {
   background-color: #002c53;
 }
 
-/* Status message */
 #status {
   font-size: 1rem;
   font-weight: bold;
   margin-top: 20px;
   color: #4caf50;
-  /* Success message color */
-  /* Error message */
 }
 #status.error {
   color: #e74c3c;
-  /* Error message color */
 }
 
-/* Responsive design */
 @media (max-width: 600px) {
   .contact-page {
     padding: 20px;
@@ -299,7 +323,7 @@ button:hover {
 }
 
 #maPhoto {
-  outline: 5px solid #121212;
+  outline: 5px solid #141414;
   border-radius: 50%;
   width: 17em;
   height: 17em;
@@ -436,7 +460,7 @@ strong {
 }
 .scroll-down:hover {
   background-color: #fff;
-  color: #121212;
+  color: #141414;
 }
 
 @keyframes pulse {
@@ -450,7 +474,6 @@ strong {
     transform: scale(1);
   }
 }
-/* Définition de la couleur de fond du texte avec un dégradé animé */
 @keyframes gradientAnimation {
   0% {
     background-position: 100% center;
@@ -522,7 +545,6 @@ strong {
 }
 .technologies-swiper .splide {
   width: 40%;
-  /* Ajuste la taille du carrousel */
   position: relative;
 }
 .technologies-swiper .splide .splide__track {
@@ -556,7 +578,7 @@ strong {
 .technologies-swiper .splide .card p {
   font-size: 1rem;
   font-weight: 600;
-  color: #555;
+  color: #aaa;
   text-transform: capitalize;
 }
 @media (max-width: 768px) {
@@ -579,7 +601,7 @@ strong {
 /************************************/
 .technologies {
   padding: 60px 20px;
-  background-color: #121212;
+  background-color: #141414;
   text-align: center;
   z-index: 1;
   color: #fff;
@@ -588,11 +610,10 @@ strong {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  font-family: "Roboto", sans-serif;
 }
 .technologies .tech-description {
   font-size: 1.2rem;
-  color: #666;
+  color: #aaa;
   margin-bottom: 40px;
   max-width: 800px;
   margin-left: auto;
@@ -622,12 +643,12 @@ strong {
 }
 .technologies-swiper .tech-card i {
   font-size: 3rem;
-  color: #007acc;
+  color: #0088ff;
   margin-bottom: 15px;
 }
 .technologies-swiper .tech-card p {
   font-size: 1.1rem;
-  color: #333;
+  color: #aaa;
   font-weight: 500;
 }
 
@@ -688,27 +709,6 @@ strong {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 }
-#divPortfolio .portfolio .cardProject .projectStatus {
-  width: 120px;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: white;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px 15px 0 15px;
-  font-weight: bold;
-  font-size: 18px;
-}
-#divPortfolio .portfolio .cardProject .termine {
-  background-color: #00B193;
-}
-#divPortfolio .portfolio .cardProject .termine + .divProject .divProjet button {
-  background-color: #00B193;
-}
 #divPortfolio .portfolio .cardProject .divProject {
   display: flex;
   flex-direction: row;
@@ -731,14 +731,14 @@ strong {
   padding: 20px;
   margin-top: 2em;
   margin-bottom: 0.5em;
-  color: #121212;
+  color: #141414;
 }
 #divPortfolio .portfolio .cardProject .divProject .cardContent p {
   margin: 8px 0;
   line-height: 1.5;
 }
 #divPortfolio .portfolio .cardProject .divProject .cardContent p strong {
-  color: #121212;
+  color: #141414;
 }
 #divPortfolio .portfolio .cardProject .divProject .cardContent .titreProjet {
   font-family: belanosima;
@@ -803,4 +803,114 @@ strong {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-projet {
+  max-width: 960px;
+  margin: 2rem auto;
+  margin-top: 10em;
+  padding: 1rem;
+  font-family: lato;
+  color: #fff;
+}
+.detail-projet h1 {
+  color: #fff;
+  font-family: belanosima;
+  font-size: 4.3rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.detail-projet .meta {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+.detail-projet .images-swiper {
+  width: 100%;
+  max-height: 400px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 5vh auto;
+}
+.detail-projet .images-swiper .splide__track {
+  padding: 2vh 0;
+}
+.detail-projet .images-swiper .splide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail-projet .images-swiper .card img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 1vw;
+  margin-bottom: 2rem;
+}
+.detail-projet .images-swiper .card p {
+  margin-top: 1vh;
+  font-size: 1em;
+  color: #333;
+}
+.detail-projet .images-swiper .splide__arrow {
+  background-color: #aaa;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  color: #fff;
+  border: none;
+}
+.detail-projet .images-swiper .splide__pagination__page {
+  background: #aaa;
+}
+.detail-projet .images-swiper .splide__pagination__page.is-active {
+  background: #0055ff;
+}
+.detail-projet section {
+  margin-bottom: 2rem;
+}
+.detail-projet section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #0088ff;
+  padding-left: 0.5rem;
+}
+.detail-projet section p,
+.detail-projet section li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.detail-projet section ul,
+.detail-projet section ol {
+  padding-left: 1.5rem;
+}
+.detail-projet section li {
+  margin-bottom: 0.5rem;
+}
+.detail-projet .extra-info {
+  font-size: 1rem;
+}
+.detail-projet .extra-info strong {
+  color: #141414;
+}
+.detail-projet .links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.detail-projet .links a {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.detail-projet .links a.github, .detail-projet .links a.demo {
+  background-color: #fff;
+  color: #141414;
+}
+.detail-projet .links a.github:hover, .detail-projet .links a.demo:hover {
+  background-color: #333;
+  color: #fff;
 }/*# sourceMappingURL=styles.css.map */

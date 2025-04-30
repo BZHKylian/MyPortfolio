@@ -1,11 +1,6 @@
 // 🎨 Variables
-@import 'colors';
-@import 'font';
+@import 'variables';
 
-$font-primary: "Zen Dots";
-$loading-circle-size: 120px;
-$logo-size: 80px;
-$circle-color: #007bff; // Couleur du cercle de rotation
 
 /***********************/
 /*********BODY**********/
@@ -52,26 +47,54 @@ body {
     margin: -4rem 0;
 }
 
+
+//Projet status//
+.projectStatus {
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $text-color;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 15px 0 15px;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.termine {
+    background-color: $colorTermine;
+
+    &+.divProject .divProjet {
+        button {
+            background-color: $colorTermine;
+        }
+    }
+}
+
 /***********************/
 /********HEADER*********/
 /***********************/
 header {
     width: 100%;
-    background-color: $background-color;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px 0;
     font-family: lato;
 
     nav {
+        background-color: $background-color;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1em 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
         .logo {
             display: flex;
@@ -112,6 +135,21 @@ header {
             display: none;
         }
     }
+
+    .projectStatus {
+        transform: scale(1.1);
+        top: auto;
+        bottom: 0;
+        right: 0;
+        border-radius: 15px 0 0 15px;
+
+    }
+
+    .termine {
+        position: absolute;
+        top: 100%;
+        right: 0;
+    }
 }
 
 /***********************/
@@ -119,7 +157,7 @@ header {
 /***********************/
 footer {
     background-color: $background-color;
-    color: #aaa;
+    color: $text-grisee;
     text-align: center;
     width: 100%;
     margin-top: auto;
@@ -133,9 +171,9 @@ footer {
 .quiSuisJe {
     width: 100vw;
     display: flex;
-    flex-direction: row-reverse; // Inverse l'ordre des éléments (photo à droite)
-    align-items: center; // Centre verticalement les éléments
-    justify-content: space-evenly; // Aligne les éléments au début
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
     padding: 5em;
     background-color: $text-color;
     color: $background-color;
@@ -150,7 +188,7 @@ footer {
     .photo-container {
         width: 15em;
         height: 15em;
-        margin-left: 20px; // Espacement à gauche pour la photo (inversé avec row-reverse)
+        margin-left: 20px;
         overflow: hidden;
         border-radius: 50%;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -164,11 +202,10 @@ footer {
         }
     }
 
-    // Texte Container
     .texte-container {
-        text-align: left; // Aligne le texte à gauche
+        text-align: left;
         max-width: 800px;
-        margin-right: 20px; // Espacement à droite pour écarter le texte du bord
+        margin-right: 20px;
 
         h2 {
             font-size: 2rem;
@@ -185,7 +222,6 @@ footer {
         }
     }
 
-    // Responsivité
     @media (max-width: 768px) {
         .photo-container {
             width: 120px;
@@ -226,28 +262,25 @@ footer {
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
-    background-color: #ffffff;
+    background-color: $text-color;
     width: 30vw;
     margin: 8em auto 3em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Title */
 .contact-page h2 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Form container */
 form {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-/* Input and textarea */
 input,
 textarea {
     font-size: 1rem;
@@ -264,17 +297,15 @@ textarea {
     resize: vertical;
 }
 
-/* Label */
 label {
     font-size: 1rem;
     margin-bottom: 6px;
     color: #444;
 }
 
-/* Button */
 button {
     background-color: #003f75;
-    color: #fff;
+    color: $text-color;
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
@@ -287,23 +318,18 @@ button {
     }
 }
 
-/* Status message */
 #status {
     font-size: 1rem;
     font-weight: bold;
     margin-top: 20px;
     color: #4caf50;
 
-    /* Success message color */
-    /* Error message */
     &.error {
         color: #e74c3c;
-        /* Error message color */
+
     }
 }
 
-
-/* Responsive design */
 @media (max-width: 600px) {
     .contact-page {
         padding: 20px;
@@ -323,9 +349,6 @@ button {
     }
 }
 
-
-
-// 📌 Mixins
 @mixin background($img-url) {
     background-image: url($img-url);
     background-size: cover;
@@ -338,7 +361,6 @@ button {
     align-items: center;
 }
 
-// 📌 Styles
 #about {
     position: relative;
     width: 100%;
@@ -348,7 +370,6 @@ button {
     padding-bottom: 50px;
 }
 
-// 📸 Image de profil
 #maPhoto {
     outline: 5px solid $background-color;
     border-radius: 50%;
@@ -356,7 +377,6 @@ button {
     height: 17em;
 }
 
-// 📌 Section "About Me"
 .about-me {
     width: 100vw;
     height: 45em;
@@ -384,7 +404,6 @@ button {
     }
 }
 
-// 📝 Texte et infos
 sup {
     font-size: 0.7em;
 }
@@ -398,7 +417,7 @@ strong {
 
     h1 {
         font-weight: 600;
-        font-family: $font-primary;
+        font-family: $font-name;
         font-size: 3.5em;
         margin: 0;
     }
@@ -417,7 +436,6 @@ strong {
         display: inline-block;
     }
 
-    // 📌 Âge et études
     #age,
     #etude {
         margin: 0;
@@ -465,7 +483,7 @@ strong {
         text-decoration: none;
         color: $text-color;
         text-align: center;
-        background: linear-gradient(45deg, #920088, #003f75, #8f00b3);
+        background: linear-gradient(45deg, $magenta, $dark-blue, $other-magenta);
         background-size: 400% 400%;
         animation: gradientAnimation 10s ease-in-out infinite;
         border-radius: 25px;
@@ -486,7 +504,6 @@ strong {
     }
 }
 
-// 🔻 Bouton Scroll avec animation
 .scroll-down {
     font-size: 1.2rem;
     color: $text-color;
@@ -503,7 +520,6 @@ strong {
     }
 }
 
-// 🔄 Animation pour un effet "respiration"
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -518,27 +534,20 @@ strong {
     }
 }
 
-/* Définition de la couleur de fond du texte avec un dégradé animé */
 @keyframes gradientAnimation {
     0% {
-        background-position: 100% center; // Commence à gauche
+        background-position: 100% center;
     }
 
     50% {
-        background-position: 0% center; // Commence à gauche
+        background-position: 0% center;
     }
 
     100% {
-        background-position: 100% center; // Va vers la droite
+        background-position: 100% center;
     }
 }
 
-// 🎨 Variables pour le loading
-$loading-circle-size: 120px;
-$logo-size: 80px;
-$circle-color: #007bff; // Couleur du cercle de rotation
-
-// 📌 Conteneur de chargement
 .loading-container {
     position: fixed;
     top: 0;
@@ -552,7 +561,6 @@ $circle-color: #007bff; // Couleur du cercle de rotation
     z-index: 9999;
 }
 
-// 📸 Conteneur du cercle rotatif
 .loading-circle {
     position: relative;
     width: $loading-circle-size;
@@ -562,26 +570,23 @@ $circle-color: #007bff; // Couleur du cercle de rotation
     align-items: center;
 }
 
-// 💻 Logo au centre
 .loading-logo {
     width: $logo-size;
     height: auto;
     z-index: 2;
 }
 
-// 🔄 Cercle en rotation autour du logo
 .loading-circle::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     border: 5px solid transparent;
-    border-top-color: $circle-color; // Couleur du cercle
+    border-top-color: $circle-color;
     border-radius: 50%;
     animation: spin 1.5s linear infinite;
 }
 
-// 🔁 Animation de rotation
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -605,7 +610,6 @@ $circle-color: #007bff; // Couleur du cercle de rotation
 
     .splide {
         width: 40%;
-        /* Ajuste la taille du carrousel */
         position: relative;
 
         .splide__track {
@@ -643,7 +647,7 @@ $circle-color: #007bff; // Couleur du cercle de rotation
             p {
                 font-size: 1rem;
                 font-weight: 600;
-                color: #555;
+                color: $text-grisee;
                 text-transform: capitalize;
             }
         }
@@ -679,18 +683,15 @@ $circle-color: #007bff; // Couleur du cercle de rotation
     z-index: 1;
     color: $text-color;
 
-    // Titre de la section
     h2 {
         font-size: 2.5rem;
         font-weight: 700;
         margin-bottom: 20px;
-        font-family: 'Roboto', sans-serif;
     }
 
-    // Description sous le titre
     .tech-description {
         font-size: 1.2rem;
-        color: #666;
+        color: $text-grisee;
         margin-bottom: 40px;
         max-width: 800px;
         margin-left: auto;
@@ -698,7 +699,6 @@ $circle-color: #007bff; // Couleur du cercle de rotation
     }
 }
 
-// Styles pour les éléments Swiper
 .technologies-swiper {
     display: flex;
     justify-content: center;
@@ -707,9 +707,8 @@ $circle-color: #007bff; // Couleur du cercle de rotation
     flex-wrap: wrap;
     padding: 20px;
 
-    // Chaque carte de technologie
     .tech-card {
-        background-color: #fff;
+        background-color: $text-color;
         border-radius: 8px;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -722,23 +721,21 @@ $circle-color: #007bff; // Couleur du cercle de rotation
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
-        // Icône de la technologie
         i {
             font-size: 3rem;
-            color: #007acc; // Couleur bleue pour l'icône
+            color: $btn-background;
             margin-bottom: 15px;
         }
 
-        // Nom de la technologie
         p {
             font-size: 1.1rem;
-            color: #333;
+            color: $text-grisee;
             font-weight: 500;
         }
     }
 }
 
-// Responsivité pour les écrans plus petits
+
 @media (max-width: 768px) {
     .technologies {
         padding: 40px 10px;
@@ -799,54 +796,29 @@ $circle-color: #007bff; // Couleur du cercle de rotation
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #fff; // Fond blanc
-            border-radius: 15px; // Coins arrondis généraux
-            overflow: hidden; // Cache tout contenu dépassant les bords arrondis
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Légère ombre pour donner du relief
-            position: relative; // Nécessaire pour positionner le statut
+            background-color: $text-color;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
 
-            .projectStatus {
-                width: 120px;
-                height: 30px;
-                position: absolute;
-                top: 0;
-                right: 0;
-                color: white;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 15px 15px 0 15px;
-                font-weight: bold;
-                font-size: 18px;
-            }
-
-            .termine {
-                background-color: $colorTermine;
-
-                & + .divProject .divProjet {
-                    button {
-                        background-color: $colorTermine;
-                    }
-                }
-            }
 
             .divProject {
                 display: flex;
-                flex-direction: row; // Affiche les éléments en ligne
+                flex-direction: row;
 
 
                 .imageCardImage {
-                    flex-shrink: 0; // Empêche l'image de se rétrécir
+                    flex-shrink: 0;
                     width: 40%;
                     padding: 20px;
                     margin: auto;
-                    overflow: hidden; // S'assure que l'image reste dans le carré
-                    border-radius: 10px; // Coins légèrement arrondis sur l'image
+                    overflow: hidden;
+                    border-radius: 10px;
 
                     img {
                         width: 100%;
-                        object-fit: cover; // Couvre l'image tout en conservant son ratio
+                        object-fit: cover;
                     }
                 }
 
@@ -872,7 +844,7 @@ $circle-color: #007bff; // Couleur du cercle de rotation
                         margin-bottom: 0.75rem;
 
                         h3 {
-                            font-size: 2em; // Taille du titre
+                            font-size: 2em;
                             font-weight: bold;
                             line-height: 35px;
                         }
@@ -901,7 +873,7 @@ $circle-color: #007bff; // Couleur du cercle de rotation
                             gap: 0.5em;
 
                             li {
-                                margin: 5px 0; // Espacement entre les technologies
+                                margin: 5px 0;
                                 font-size: 1rem;
 
                                 img {
@@ -941,11 +913,144 @@ $circle-color: #007bff; // Couleur du cercle de rotation
 
             // Effet au survol
             &:hover {
-                transform: translateY(-5px); // Légère élévation au survol
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Ombre plus marquée
-                transition: transform 0.3s ease, box-shadow 0.3s ease; // Transition fluide
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        }
+    }
+}
+
+
+.detail-projet {
+    max-width: 960px;
+    margin: 2rem auto;
+    margin-top: 10em;
+    padding: 1rem;
+    font-family: lato;
+    color: $text-color;
+
+    h1 {
+        color: $text-color;
+        font-family: belanosima;
+        font-size: 4.3rem;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+    }
+
+    .meta {
+        font-size: 0.9rem;
+        color: $text-grisee;
+        margin-bottom: 2rem;
+    }
+
+    .images-swiper {
+        width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+        margin: 5vh auto;
+
+        .splide__track {
+            padding: 2vh 0;
+        }
+
+        .splide__slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                border-radius: 1vw;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                margin-top: 1vh;
+                font-size: 1em;
+                color: #333;
+            }
+        }
+
+        .splide__arrow {
+            background-color: $text-grisee;
+            width: 3vw;
+            height: 3vw;
+            border-radius: 50%;
+            color: #fff;
+            border: none;
+        }
+
+        .splide__pagination__page {
+            background: #aaa;
+
+            &.is-active {
+                background: #0055ff;
             }
         }
     }
 
+
+    section {
+        margin-bottom: 2rem;
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid $btn-background;
+            padding-left: 0.5rem;
+        }
+
+        p,
+        li {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .extra-info {
+        font-size: 1rem;
+
+        strong {
+            color: $background-color;
+        }
+    }
+
+    .links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+
+        a {
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+
+            &.github,
+            &.demo {
+                background-color: $text-color;
+                color: $background-color;
+
+                &:hover {
+                    background-color: #333;
+                    color: $text-color;
+                }
+            }
+        }
+    }
 }
