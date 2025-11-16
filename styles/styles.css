@@ -1,0 +1,359 @@
+:root {
+    /* 👉 Tu peux juste changer ces 3 couleurs pour coller à ton style */
+    --bg: #020617;
+    --bg-soft: #020617;
+    --accent: #38bdf8;
+    --accent-soft: rgba(56, 189, 248, 0.12);
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+    --border-subtle: rgba(148, 163, 184, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #0b1120 0, var(--bg-soft) 45%, #000 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 1.25rem 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), transparent);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: default;
+    font-family: "Poppins", system-ui, sans-serif;
+}
+
+.logo-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(56, 189, 248, 0.12);
+    /* Accent léger */
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.25);
+}
+
+.logo-dot img {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
+}
+
+.logo-text {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #e5e7eb;
+    /* gris clair */
+}
+
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.header-pill {
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    background: rgba(15, 23, 42, 0.7);
+}
+
+.mail-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.mail-link:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 6vw 3.5rem;
+}
+
+.wrapper {
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+}
+
+@media (max-width: 800px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    header {
+        padding-inline: 1.5rem;
+    }
+
+    main {
+        padding-inline: 1.5rem;
+    }
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.9rem;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--accent);
+}
+
+h1 {
+    font-size: clamp(2.1rem, 3.3vw, 2.7rem);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: var(--accent);
+}
+
+.subtitle {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    max-width: 32rem;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+}
+
+.info-line {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.7rem;
+}
+
+.info-line span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.info-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.7);
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.btn-primary {
+    border: none;
+    outline: none;
+    border-radius: 999px;
+    padding: 0.7rem 1.35rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: default;
+    background: linear-gradient(135deg, var(--accent), #6366f1);
+    color: #0b1120;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+}
+
+.btn-secondary {
+    border-radius: 999px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.82rem;
+    border: 1px dashed rgba(148, 163, 184, 0.6);
+    color: var(--text-muted);
+    background: rgba(15, 23, 42, 0.7);
+}
+
+/* Bloc de droite (carte "en construction") */
+.card {
+    border-radius: 1.4rem;
+    border: 1px solid var(--border-subtle);
+    background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.18), transparent 50%),
+        rgba(15, 23, 42, 0.9);
+    padding: 1.6rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+    animation: float 6s ease-in-out infinite;
+}
+
+.card-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.card-text {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1.1rem;
+    line-height: 1.6;
+}
+
+.card-progress {
+    margin-top: 0.5rem;
+}
+
+.progress-bar {
+    position: relative;
+    height: 6px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(30, 64, 175, 0.45);
+    margin-bottom: 0.45rem;
+}
+
+.progress-inner {
+    position: absolute;
+    inset: 0;
+    width: 45%;
+    background: linear-gradient(90deg, var(--accent), #a855f7, #f97316);
+    animation: loading 2.8s ease-in-out infinite;
+}
+
+.progress-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+}
+
+.pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+}
+
+.pill-item {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(12px);
+}
+
+.big-number {
+    position: absolute;
+    right: -8px;
+    bottom: -10px;
+    font-size: 4.2rem;
+    font-weight: 700;
+    color: rgba(15, 23, 42, 0.95);
+    text-shadow: 0 0 40px rgba(15, 23, 42, 1);
+    pointer-events: none;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(60%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+footer {
+    padding: 0.9rem 6vw 1.4rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    footer {
+        text-align: center;
+    }
+}

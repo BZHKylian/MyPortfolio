@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio – En construction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Police proche des portfolios modernes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-dot">
+                <img src="img/kh.png" alt="Logo KH">
+            </span>
+            <span class="logo-text">KYLIAN&nbsp;HOUEDEC</span>
+        </div>
+        <div class="header-right">
+            <div class="header-pill">Portfolio v2 en préparation</div>
+            <a class="mail-link" href="mailto:kylian.houedec@etudiant.univ-rennes.fr">Me contacter</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="wrapper">
+            <div>
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    <span>Travail en cours</span>
+                </div>
+
+                <h1>
+                    Nouveau <span class="highlight">portfolio</span> en construction.
+                </h1>
+
+                <p class="subtitle">
+                    Je suis en train de refondre entièrement mon espace en ligne pour mieux présenter
+                    mes projets, mes expériences et ce que je peux apporter en développement web.
+                </p>
+
+                <div class="info-line">
+                    <span><span class="info-dot"></span> Étudiant en BUT Informatique</span>
+                    <span><span class="info-dot"></span> Passionné par le web</span>
+                    <span><span class="info-dot"></span> Version actuelle : temporaire</span>
+                </div>
+
+                <div class="button-row">
+                    <button class="btn-primary" type="button">
+                        🚧 Portfolio en construction
+                    </button>
+                    <div class="btn-secondary">
+                        Tu peux quand même me contacter pour un projet, un stage ou juste discuter.
+                    </div>
+                </div>
+            </div>
+
+            <aside class="card" aria-hidden="true">
+                <div class="card-label">Aperçu rapide</div>
+                <div class="card-title">Roadmap de la refonte</div>
+                <p class="card-text">
+                    • Nouvelle page d’accueil<br>
+                    • Mise en avant des projets <br>
+                    • Case studies détaillés<br>
+                    • Design plus propre &amp; animé
+                </p>
+
+                <div class="card-progress">
+                    <div class="progress-bar">
+                        <div class="progress-inner"></div>
+                    </div>
+                    <div class="progress-label">
+                        <span>Phase actuelle : intégration</span>
+                        <span>WIP</span>
+                    </div>
+                </div>
+
+                <div class="pill-list">
+                    <span class="pill-item">React</span>
+                    <span class="pill-item">JavaScript</span>
+                    <span class="pill-item">JSON</span>
+                    <span class="pill-item">UI / UX</span>
+                    <span class="pill-item">Responsive</span>
+                    <span class="pill-item">Animations légères</span>
+                </div>
+
+                <div class="big-number">v2</div>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        © <span id="year"></span> – Portfolio de Kylian Houedec (version temporaire)
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
+s
